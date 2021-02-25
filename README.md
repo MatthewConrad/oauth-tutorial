@@ -1,13 +1,13 @@
 # OAuth Tutorial
 
-This repo serves as endpoints for my OAuth 2.0 tutorial using the Spotify API.
+This repo serves as endpoints for my OAuth 2.0 tutorial using Node, Express, TypeScript, and the Spotify API.
 
 ## Quick Start
 
 Clone the repo:
 
 ```
-git clone https://github.com/MatthewConrad/oauth-tutorial.git DIRNAME
+git clone https://github.com/MatthewConrad/oauth-tutorial.git <DIRNAME>
 ```
 
 As with other Node projects, once cloned, you will need to run `npm install`. Running `npm run start` will start the server on port 5000. You should see `Hello World!` and a couple of links when visiting `localhost:5000` in your browser.
