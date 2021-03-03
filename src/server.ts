@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import oAuthRouter from "./oAuthRoutes";
 
 dotenv.config();
 const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
@@ -9,12 +10,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("build"));
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", `http://localhost:${port}`);
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers");
     next();
 });
+
+app.use(oAuthRouter);
 
 if (process.env.ENV === "local") {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
